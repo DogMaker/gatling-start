@@ -11,13 +11,13 @@ class DemoSimulation extends Simulation {
     "authorization" -> "Basic 639b36ea-aff3-1b85-618e-c696734afc6e")
 
   val scnGet = scenario("Exemplo de request get")
-    .exec(http("Saudacoes Get")
+    .exec(http("Saudacoes")
       .get("/v2/5ed4e85f3300005100f7a55b")
       .header("Keep-Alive", "150")
     )
 
   val scnPost = scenario("Exemplo de request post")
-    .exec(http("Saudacoes Post")
+    .exec(http("Saudacoes")
       .post("/v2/5ed4e85f3300005100f7a55b")
       .headers(sentHeaders)
       .body(StringBody("""{ "myContent": "myHardCodedValue" }""")).asJson
