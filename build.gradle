@@ -15,8 +15,6 @@ dependencies {
 }
 
 task runLoadtest(type: JavaExec) {
-    systemProperty 'logback.configurationFile', 'logback.xml'
-
     classpath = sourceSets.test.runtimeClasspath + files('config/')
     main = "io.gatling.app.Gatling"
 
